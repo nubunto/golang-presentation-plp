@@ -1,0 +1,167 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="highlight.min.css">
+		<link rel="stylesheet" href="go-presentation.css">
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div id="impress">
+			<div id="title" class="slide step">
+				<h1>Golang</h1>
+				<img src="golang.png">
+			</div>
+
+			<div id="history" class="slide step" data-x="-1000" data-y="-1500">
+				A Linguagem de programação Go foi proposta inicialmente no final de 2006, chegando ao mundo open-source em 2007.
+				Foi desenvolvida e concebida originalmente por Rob Pike, Ken Thompson e Robert Griesemer.
+			</div>
+			<div id="giants" class="slide step" data-x="1000" data-y="-1500">
+				Ken Thompson e Rob Pike trabalharam diretamente na construção do sistema operacional Unix.
+				Mais tarde, o Unix daria lugar ao atualmente mais usado sistema operacional do mundo: Linux.
+			</div>
+			<div id="why" class="slide step" data-x="-1000" data-y="1500">
+				<h3>Porque mais uma linguagem de programação?</h3>
+			</div>
+			<div id="big-teams" class="slide step" data-x="1000" data-y="1500" data-scale="2">
+				Go é diretamente voltado a <strong>grandes</strong> times de programadores, desenvolvendo sistemas para o mundo real.
+			</div>
+			<div id="pike-quote" class="slide step" data-x="2000" data-y="3000">
+				<blockquote>
+				Go is a programming language designed by Google to help solve Google's problems, and Google has big problems.
+				The hardware is big and the software is big. There are many millions of lines of software, with servers mostly in C++ and lots of Java and Python for the other pieces. Thousands of engineers work on the code, at the "head" of a single tree comprising all the software, so from day to day there are significant changes to all levels of the tree. A large custom-designed distributed build system makes development at this scale feasible, but it's still big.
+				And of course, all this software runs on zillions of machines, which are treated as a modest number of independent, networked compute clusters. 
+				</blockquote>
+				<a href="https://talks.golang.org/2012/splash.article">Artigo Completo</a>
+			</div>
+
+			<div id="cluster" class="step slide" data-x="5000" data-y="3000">
+				<img src="cluster.jpg">
+			</div>
+
+			<div id="code-example" class="slide step" data-x="6500" data-y="0" data-scale="5">
+				<h3>Hello, world!</h3>
+				<pre>
+					<code class="go">
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Printf("Hello, world!")
+}
+					</code>
+				</pre>
+			</div>
+
+			<div id="keywords" class="slide step" data-x="1000" data-y="6000">
+				Keywords
+				<pre><code class="go">
+break        default      func         interface    select
+case         defer        go           map          struct
+chan         else         goto         package      switch
+const        fallthrough  if           range        type
+continue     for          import       return       var
+				</code></pre>
+				Go apresenta 25 keywords no total.
+			</div>
+
+			<div id="operators" class="slide step" data-x="3000" data-y="6000">
+				Operadores
+<pre><code class="go">
++    &     +=    &=     &&    ==    !=    (    )
+-    |     -=    |=     ||    <     <=    [    ]
+*    ^     *=    ^=     <-    >     >=    {    }
+/    <<    /=    <<=    ++    =     :=    ,    ;
+%    >>    %=    >>=    --    !     ...   .    :
+     &^          &^=
+</code></pre>
+			</div>
+
+
+			<div id="declaration" class="slide step" data-x="5000" data-y="6000">
+				Chamadas e declarações de funções em Go diferem um pouco das mesmas em C.
+				Em C, o tipo é declarado <strong>antes</strong> do nome da variável. A função também declara seu tipo de retorno antes do nome.
+				Em Go, o tipo é declarado após o nome da variável e depois da assinatura da função.
+			</div>
+
+			<div id="declaration-C" class="slide step" data-x="7000" data-y="6000">
+<pre><code class="C">
+#include &lt;stdout.h&gt;
+
+int main() {
+	int sum = 0;
+	sum = sumThree(5, 14, 22);
+	printf("%d\n", sum);
+}
+
+int sumThree(int a, int b, int c) {
+	return a + b + c;
+}
+</code></pre>
+			</div>
+
+			<div id="declaration-go" class="slide step" data-x="9000" data-y="6000">
+<pre><code class="go">
+package main
+
+import "fmt"
+
+func main() {
+
+	// inferência de tipo
+	sum := sumThree(5, 14, 22)
+	fmt.Printf("%d\n", sum)
+
+	// ou declaração completa
+
+	var sum int
+	sum = sumThree(5, 14, 22)
+	fmt.Printf("%d\n", sum)
+}
+
+func sumThree(a, b, c int) int {
+	return a + b + c
+}
+
+// ou
+
+func sumThree(a int, b int, c int) int {
+	return a + b + c
+}
+</code</pre>
+			</div>
+
+
+			<div id="basic-types" class="step slide" data-x="11000" data-y="6000">
+				<h3>Tipos básicos</h3>
+<pre><code class="go">
+bool
+
+string
+
+int  int8  int16  int32  int64
+uint uint8 uint16 uint32 uint64 uintptr
+
+byte // sinônimo de uint8
+
+rune // sinônimo de int32
+     // representa um caracter Unicode 
+
+float32 float64
+
+complex64 complex128
+</code</pre>
+			</div>
+			
+			<div id="overview" class="step slide" data-scale="10"></div>
+		</div>
+
+		<script src="highlight.min.js"></script>
+		<script src="impress.js/js/impress.js"></script>
+		<script>
+			hljs.initHighlightingOnLoad();
+			impress().init();
+		</script>
+	</body>
+</html>
