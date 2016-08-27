@@ -7,26 +7,26 @@
 	</head>
 	<body>
 		<div id="impress">
-			<div id="title" class="slide step">
+			<div id="title" class="slide step" data-x="-2000">
 				<h1>Golang</h1>
 				<img src="img/golang.png">
 			</div>
 
-			<div id="history" class="slide step" data-x="-1000" data-y="-1500">
+			<div id="history" class="slide step" data-x="-3000" data-y="-1500">
 				A Linguagem de programação Go foi proposta inicialmente no final de 2006, chegando ao mundo open-source em 2007.
 				Foi desenvolvida e concebida originalmente por Rob Pike, Ken Thompson e Robert Griesemer.
 			</div>
-			<div id="giants" class="slide step" data-x="1000" data-y="-1500">
+			<div id="giants" class="slide step" data-x="-1000" data-y="-1500">
 				Ken Thompson e Rob Pike trabalharam diretamente na construção do sistema operacional Unix.
 				Mais tarde, o Unix daria lugar ao atualmente mais usado sistema operacional do mundo: Linux.
 			</div>
-			<div id="why" class="slide step" data-x="-1000" data-y="1500">
+			<div id="why" class="slide step" data-x="-3000" data-y="1500">
 				<h3>Porque mais uma linguagem de programação?</h3>
 			</div>
-			<div id="big-teams" class="slide step" data-x="1000" data-y="1500" data-scale="2">
+			<div id="big-teams" class="slide step" data-x="-1000" data-y="1500" data-scale="2">
 				Go é diretamente voltado a <strong>grandes</strong> times de programadores, desenvolvendo sistemas para o mundo real.
 			</div>
-			<div id="pike-quote" class="slide step" data-x="2000" data-y="3000">
+			<div id="pike-quote" class="slide step" data-x="4250" data-y="-2000">
 				<blockquote>
 				Go is a programming language designed by Google to help solve Google's problems, and Google has big problems.
 				The hardware is big and the software is big. There are many millions of lines of software, with servers mostly in C++ and lots of Java and Python for the other pieces. Thousands of engineers work on the code, at the "head" of a single tree comprising all the software, so from day to day there are significant changes to all levels of the tree. A large custom-designed distributed build system makes development at this scale feasible, but it's still big.
@@ -35,7 +35,7 @@
 				<a href="https://talks.golang.org/2012/splash.article">Artigo Completo</a>
 			</div>
 
-			<div id="cluster" class="step slide" data-x="5000" data-y="3000">
+			<div id="cluster" class="step slide" data-x="8500" data-y="-2000">
 				<img src="img/cluster.jpg">
 			</div>
 
@@ -54,7 +54,7 @@ func main() {
 				</pre>
 			</div>
 
-			<div id="keywords" class="slide step" data-x="1000" data-y="6000">
+			<div id="keywords" class="slide step" data-x="1000" data-y="2000">
 				Keywords
 				<pre><code class="go">
 break        default      func         interface    select
@@ -66,7 +66,7 @@ continue     for          import       return       var
 				Go apresenta 25 keywords no total.
 			</div>
 
-			<div id="operators" class="slide step" data-x="3000" data-y="6000">
+			<div id="operators" class="slide step" data-x="3000" data-y="2000" data-rotate="90">
 				Operadores
 <pre><code class="go">
 +    &     +=    &=     &&    ==    !=    (    )
@@ -78,48 +78,7 @@ continue     for          import       return       var
 </code></pre>
 			</div>
 
-
-			<div id="declaration" class="slide step" data-x="5000" data-y="6000">
-				Chamadas e declarações de funções em Go diferem um pouco das mesmas em C.
-				Em C, o tipo é declarado <strong>antes</strong> do nome da variável. A função também declara seu tipo de retorno antes do nome.
-				Em Go, o tipo é declarado após o nome da variável e depois da assinatura da função.
-			</div>
-
-			<div id="declaration-C" class="slide step" data-x="7000" data-y="6000">
-<pre><code class="C">
-#include &lt;stdout.h&gt;
-
-int main() {
-	int sum = 0;
-	sum = sumThree(5, 14, 22);
-	printf("%d\n", sum);
-}
-
-int sumThree(int a, int b, int c) {
-	return a + b + c;
-}
-</code></pre>
-			</div>
-
-			<div id="declaration-go" class="slide step" data-x="9000" data-y="6000">
-<pre><code class="go">
-package main
-
-import "fmt"
-
-func main() {
-	sum := sumThree(5, 14, 22)
-	fmt.Printf("%d\n", sum)
-}
-
-func sumThree(a, b, c int) int {
-	return a + b + c
-}
-</code</pre>
-			</div>
-
-
-			<div id="basic-types" class="step slide" data-x="11000" data-y="6000">
+			<div id="basic-types" class="step slide" data-x="2000" data-y="3000" data-rotate="180">
 				<h3>Tipos básicos</h3>
 <pre><code class="go">
 bool
@@ -139,7 +98,118 @@ float32 float64
 complex64 complex128
 </code</pre>
 			</div>
-			
+
+			<div id="declaration" class="slide step" data-x="5000" data-y="2000">
+				Chamadas e declarações de funções em Go diferem um pouco das mesmas em C.
+				Em C, o tipo é declarado <strong>antes</strong> do nome da variável. A função também declara seu tipo de retorno antes do nome.
+				Em Go, o tipo é declarado após o nome da variável e depois da assinatura da função.
+			</div>
+
+			<div id="declaration-C" class="slide step" data-x="7000" data-y="2000">
+<pre><code class="C">
+#include &lt;stdout.h&gt;
+
+int main() {
+	int sum = 0;
+	sum = sumThree(5, 14, 22);
+	printf("%d\n", sum);
+}
+
+int sumThree(int a, int b, int c) {
+	return a + b + c;
+}
+</code></pre>
+			</div>
+
+			<div id="declaration-go" class="slide step" data-x="9000" data-y="2000">
+<pre><code class="go">
+package main
+
+import "fmt"
+
+func main() {
+	sum := sumThree(5, 14, 22)
+	fmt.Printf("%d\n", sum)
+}
+
+func sumThree(a, b, c int) int {
+	return a + b + c
+}
+</code</pre>
+			</div>
+
+			<div id="concurrency" class="step slide" data-x="5000" data-y="3000">
+			     <h2>Concorrência</h2>
+			</div>
+
+			<div id="concurrency-example" class="step slide" data-x="7000" data-y="3000">
+<pre><code class="go">
+package main
+
+import (
+     "fmt"
+     "time"
+)
+
+
+func printFoo() {
+     for i := 0; i &lt; 10; i++ {
+	  fmt.Printf("foo")
+     }
+}
+
+func main() {
+     go printFoo()
+     for i := 0; i &lt; 5; i++ {
+	  fmt.Printf("alternadamente")
+     }
+     time.Sleep(2 * time.Second)
+}
+</code></pre>
+			</div>
+
+			<div id="concurrency-orchestration" class="step slide" data-x="9000" data-y="3000">
+			     <a href="http://divan.github.io/demos/pingpong/">Visualização</a>
+<pre><code class="go">
+package main
+
+import "time"
+
+func main() {
+    var Ball int
+    table := make(chan int)
+    go player(table)
+    go player(table)
+
+    table &lt;- Ball
+    time.Sleep(1 * time.Second)
+    &lt;-table
+}
+
+func player(table chan int) {
+    for {
+        ball := &lt;-table
+        ball++
+        time.Sleep(100 * time.Millisecond)
+        table &lt;- ball
+    }
+}
+</code></pre>
+			</div>
+
+			<div id="market" class="step slide" data-x="3000" data-y="6000">
+			 <h2>Mercado</h2>
+			 <ul>
+			      <li>Startups</li>
+			      <li>Código livre</li>
+			      <li>Pouca tração no Brasil (mas existente)</li>
+			      <li>De 80 a 120k dólares/ano</li>
+			 </ul>
+			</div>
+
+			<div id="conclusion" class="step slide" data-x="2000" data-z="-3000">
+			 Conclusão
+			</div>
 			<div id="overview" class="step slide" data-scale="10"></div>
 		</div>
 
