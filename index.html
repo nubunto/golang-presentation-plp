@@ -108,25 +108,11 @@ package main
 import "fmt"
 
 func main() {
-
-	// inferência de tipo
 	sum := sumThree(5, 14, 22)
-	fmt.Printf("%d\n", sum)
-
-	// ou declaração completa
-
-	var sum int
-	sum = sumThree(5, 14, 22)
 	fmt.Printf("%d\n", sum)
 }
 
 func sumThree(a, b, c int) int {
-	return a + b + c
-}
-
-// ou
-
-func sumThree(a int, b int, c int) int {
 	return a + b + c
 }
 </code</pre>
